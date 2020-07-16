@@ -10,21 +10,8 @@
         </filter>
     </appender>
 
-    <appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>./log/parser.log</File>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>./log/parser.%d{yyyy-MM-dd}.log</FileNamePattern>
-            <maxHistory>30</maxHistory>
-        </rollingPolicy>
-
-        <encoder>
-            <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p --- [%6t] %c{1.}:%L: %m%n</Pattern>
-        </encoder>
-    </appender>
-
-    <logger name="com.ailleron" additivity="false">
+    <logger name="com.company" additivity="false">
         <level value="INFO"/>
-        <appender-ref ref="dailyRollingFileAppender"/>
         <appender-ref ref="consoleAppender"/>
     </logger>
 
